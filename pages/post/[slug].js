@@ -1,4 +1,5 @@
 import client from '../../client'
+import BlockContent from '../../components/blockContent'
 
 const Post = ({ post }) => {
     if (!post) {
@@ -7,7 +8,9 @@ const Post = ({ post }) => {
     return (
         <article>
             <h1>{post?.title}</h1>
-            <p>{post?.description}</p>
+            <main>
+                <BlockContent blocks={post?.body} />
+            </main>
         </article>
     )
 }
@@ -28,6 +31,15 @@ export async function getStaticProps({ params }) {
             title,
             description,
             slug,
+            body[]{
+                ...,
+                markDefs[]{
+                    ...,
+                    _type == "customLink" => {
+                        "slug": @.internal->slug
+                    }
+                }
+            },
         }`
     )
     return {
