@@ -38,6 +38,10 @@ export async function getStaticProps({ params }) {
                     _type == "customLink" => {
                         "slug": @.internal->slug
                     }
+                },
+                asset->{
+                    ...,
+                    metadata
                 }
             },
         }`
