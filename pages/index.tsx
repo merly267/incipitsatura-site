@@ -1,7 +1,7 @@
 import client from '../client'
+import Seo from '../components/Seo'
 import { InferGetStaticPropsType } from 'next'
 import Link from 'next/link'
-import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 
@@ -20,12 +20,11 @@ const inter = Inter({ subsets: ['latin'] })
 const Index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
-      <Head>
-        <title>{process.env.NEXT_PUBLIC_SITE_TITLE}</title>
-        <meta name="description" content={process.env.NEXT_PUBLIC_SITE_DESCRIPTION} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Seo
+        title={process.env.NEXT_PUBLIC_SITE_TITLE}
+        description={process.env.NEXT_PUBLIC_SITE_DESCRIPTION}
+        url={`${process.env.NEXT_PUBLIC_SITE_ROOT}/`}
+      />
       <main className={styles.main}>
         <h1>{process.env.NEXT_PUBLIC_SITE_TITLE}</h1>
         <p>{process.env.NEXT_PUBLIC_SITE_DESCRIPTION}</p>

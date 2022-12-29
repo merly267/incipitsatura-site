@@ -1,12 +1,18 @@
 import client from '../../client'
-import BlockContent from '../../components/blockContent'
+import Seo from '../../components/Seo'
+import BlockContent from '../../components/BlockContent'
 
-const Post = ({ post }) => {
+const Post = ({ post, currentSlug }) => {
     if (!post) {
         return null
     }
     return (
         <article>
+            <Seo
+                title={post?.title}
+                description={post?.description}
+                url={`${process.env.NEXT_PUBLIC_SITE_ROOT}/post/${currentSlug}`}
+            />
             <h1>{post?.title}</h1>
             <main>
                 <BlockContent blocks={post?.body} />
@@ -46,9 +52,11 @@ export async function getStaticProps({ params }) {
             },
         }`
     )
+    const currentSlug = params.slug;
     return {
         props: {
-            post
+            post,
+            currentSlug
         }
     }
 }

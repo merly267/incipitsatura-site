@@ -1,6 +1,6 @@
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
-import Image from "./image";
+import Image from "./Image";
 
 // see https://github.com/portabletext/react-portabletext
 const components = {
