@@ -1,0 +1,8 @@
+.footer {
+    font-family: var(--bodyfont);
+    font-size: .8em;
+    color: var(--textgrey);
+    flex-shrink: 0;
+    border-top: 1px solid var(--grey);
+    padding-top: calc(var(--padding) / 2);
+}

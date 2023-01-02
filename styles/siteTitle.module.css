@@ -1,0 +1,12 @@
+.heading, a.heading {
+    flex-shrink: 0;
+    font-family: var(--headingfont);
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 3em;
+    color: var(--teal);
+}
+
+a.heading:hover {
+    color: var(--textcolour);
+}
