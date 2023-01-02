@@ -2,6 +2,8 @@ import client from '../../client'
 import Seo from '../../components/Seo'
 import BlockContent from '../../components/BlockContent'
 
+import styles from '../../styles/post.module.css'
+
 const Post = ({ post, currentSlug }) => {
     if (!post) {
         return null
@@ -13,10 +15,11 @@ const Post = ({ post, currentSlug }) => {
                 description={post?.description}
                 url={`${process.env.NEXT_PUBLIC_SITE_ROOT}/post/${currentSlug}`}
             />
-            <h1>{post?.title}</h1>
-            <main>
+            <h1 className={styles.heading}>{post?.title}</h1>
+            <p className={styles.publication_info}>{`Published on ${new Date(post?.publishedAt).toLocaleDateString('en-uk', { day: "numeric", year:"numeric", month:"long" })}`}</p>
+            <div>
                 <BlockContent blocks={post?.body} />
-            </main>
+            </div>
         </article>
     )
 }
@@ -37,6 +40,7 @@ export async function getStaticProps({ params }) {
             title,
             description,
             slug,
+            publishedAt,
             body[]{
                 ...,
                 markDefs[]{

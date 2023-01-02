@@ -1,0 +1,14 @@
+.heading {
+    font-family: var(--headingfont);
+    font-weight: normal;
+    font-size: 1.75em;
+    padding: calc(var(--padding) * 2) 0 var(--padding);
+}
+
+.publication_info {
+    font-size: 0.9em;
+    color: var(--textgrey);
+    border-bottom: 1px solid var(--grey);
+    padding-bottom: calc(var(--padding) * 0.5);
+    margin-bottom: var(--padding);
+}
