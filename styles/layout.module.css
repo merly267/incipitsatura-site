@@ -3,6 +3,9 @@
     flex-direction: column;
     min-height: 100vh;
     padding: var(--padding);
+    max-width: 90ch;
+    margin-left: auto;
+    margin-right: auto;
 }
 .main {
     font-family: var(--bodyfont);
