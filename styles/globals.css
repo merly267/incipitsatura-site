@@ -38,6 +38,9 @@ a:link, a:visited {
   color: inherit;
   transition: all .5s ease;
 }
+a:hover {
+  color: var(--teal);
+}
 
 p {
   margin-bottom: 1em;
