@@ -32,7 +32,6 @@ const Index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
                     <Link href="/post/[slug]" as={`/post/${slug.current}`}>
                       {title}
                     </Link>
-                    {/* <div className={styles.date}>{new Date(publishedAt).toDateString()}</div> */}
                     <div className={styles.date}>{new Date(publishedAt).toLocaleDateString('en-uk', { day: "numeric", year:"numeric", month:"short" })}</div>
                     <div className={styles.description}>{description}</div>
                   </li>
