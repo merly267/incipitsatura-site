@@ -1,8 +1,8 @@
 import Head from "next/head";
 
 type SeoProps = {
-    title: string
-    description: string
+    title: string | undefined
+    description: string | undefined
     url: string
 }
 
