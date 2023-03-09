@@ -1,6 +1,12 @@
 import Head from "next/head";
 
-const Seo = ({ title, description, url }) => {
+type SeoProps = {
+    title: string
+    description: string
+    url: string
+}
+
+const Seo = ({ title, description, url }: SeoProps) => {
     if (!url) {
         return null
     }
